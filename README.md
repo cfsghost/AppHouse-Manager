@@ -1,3 +1,3 @@
 AppHouse Manager
 ---
-Management of AppHouse, to provide a applications on hosting platform
+Management of AppHouse, to manage applications on hosting platform
