@@ -10,11 +10,11 @@ form(action='/login_verify', method='POST')
 				div Please check your username and password!
 		
 		div(class='inputline')
-			div Username:
+			label(for='username') Username:
 			input(name='username', type='text')
 
 		div(class='inputline')
-			div Passowrd:
+			label(for='password') Passowrd:
 			input(name='password', type='password')
 		div(style='position: absolute; right: 0px;')
 			button Login
