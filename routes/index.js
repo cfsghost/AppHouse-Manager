@@ -10,6 +10,10 @@ exports.login = function(req, res) {
 
 exports.login_verify = function(req, res) {
 	if (req.body.username == 'admin' && req.body.password == 'admin') {
+		req.session = {
+			login: true,
+			username: req.body.username
+		};
 		res.redirect('/applist');
 		return;
 	}
