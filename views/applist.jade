@@ -21,7 +21,12 @@ div(class='content')
 				td #{app.appName}
 				td #{app.domain}
 				td #{app.standardPort}
-				td #{app.state}
+
+				- if (app.state == 'running')
+					td(class='state_running') #{app.state}
+				- else
+					td(class='state_stop') #{app.state}
+
 				td
 					- if (app.id != AppHouse.appID)
 						button(onclick='location.href=\'/app/#{app.id}/restart\';') Restart

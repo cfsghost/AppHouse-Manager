@@ -152,3 +152,12 @@ button:active {
 	border: 0px;
 	padding: 10px;
 }
+
+/* State */
+.state_running {
+	color: green;
+}
+
+.state_stop {
+	color: #bb0000;
+}
