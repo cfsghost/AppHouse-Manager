@@ -11,13 +11,16 @@ exports.login = function(req, res) {
 exports.login_verify = function(req, res) {
 	if (req.body.username == 'admin' && req.body.password == 'admin') {
 		res.redirect('/applist');
+		res.end();
 	}
 
 	res.redirect('/login?err=1');
+	res.end();
 };
 
 exports.applist = function(req, res) {
 	AppHouse.Manager.lsApp(function(apps) {
+		console.log(apps);
 		res.render('applist', { title: 'AppHouse Manager', apps: apps })
 	});
 };
