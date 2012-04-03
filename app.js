@@ -5,6 +5,7 @@
 
 var express = require('express'),
 	CookieStore = require('cookie-sessions'),
+	consoleServer = require('./console');
 	routes = require('./routes');
 
 var app = module.exports = express.createServer();
@@ -39,6 +40,8 @@ function auth(req, res, next) {
 
 	res.redirect('/login');
 }
+
+consoleServer.createServer(app);
 
 // Routes
 

@@ -41,30 +41,44 @@ exports.app = function(req, res) {
 	var action = req.params.action;
 	var id = req.params.id;
 
-	/* Cannot start/stop/restart me by myself */
-	if (id == AppHouse.appID) {
-		res.redirect('/applist');
-		return;
-	}
-
 	switch(action) {
 	case 'stop':
+		if (id == AppHouse.appID) {
+			res.redirect('/applist');
+			break;
+		}
+
 		AppHouse.Manager.stopApp(id, function() {
 			res.redirect('/applist');
 		});
 		break;
 
 	case 'start':
+		if (id == AppHouse.appID) {
+			res.redirect('/applist');
+			break;
+		}
+
 		AppHouse.Manager.startApp(id, function() {
 			res.redirect('/applist');
 		});
 		break;
 
 	case 'restart':
+		if (id == AppHouse.appID) {
+			res.redirect('/applist');
+			break;
+		}
+
 		AppHouse.Manager.restartApp(id, function() {
 			res.redirect('/applist');
 		});
 		break;
 
+	case 'console':
+		AppHouse.Manager.getAppInfo(id, function(app) {
+			res.render('console', { title: app.appName + ' Console', AppHouse: AppHouse, app: app })
+		});
+		break;
 	}
 };

@@ -1,0 +1,24 @@
+script(type='text/javascript', src='/javascripts/socket.io.min.js')
+script
+	var appID = !{JSON.stringify(app.id)};
+
+	socket = io.connect();
+	socket.on('connect', function() {
+	});
+
+	socket.on('disconnect', function() {
+	});
+
+	socket.on('console', function(data) {
+		$('#console').append(data).animate({ scrollTop: $('#console').attr('scrollHeight') }, 'slow');
+	});
+
+	socket.emit('console', appID);
+
+div(class='control_panel')
+	div(class='label') #{title} #{app.appID}
+	div(class='toolbar')
+		div(class='button', onclick='location.href=\'/logout\';') Logout
+
+div(class='console')
+	pre#console(class='output')
