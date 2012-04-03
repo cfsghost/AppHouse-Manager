@@ -1,6 +1,20 @@
 div(class='box') #{title}
 
-h1 Application List
+div(class='content')
+	h1 Application Status
 
-each app in apps
-	div #{app.appName}
+	table(class='datalist')
+		tr(class='column_title')
+			td ID
+			td Application Name
+			td Domain
+			td Port
+			td State
+
+		each app in apps
+			tr
+				td #{app.id}
+				td #{app.appName}
+				td #{app.domain}
+				td #{app.standardPort}
+				td #{app.state}
