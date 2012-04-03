@@ -33,6 +33,7 @@ app.get('/', routes.index);
 app.get('/login', routes.login);
 app.post('/login_verify', routes.login_verify);
 app.get('/applist', routes.applist);
+app.get('/app/:id/:action', routes.app);
 
 app.listen(80);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

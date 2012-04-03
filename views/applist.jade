@@ -10,6 +10,7 @@ div(class='content')
 			td Domain
 			td Port
 			td State
+			td
 
 		each app in apps
 			tr
@@ -18,3 +19,11 @@ div(class='content')
 				td #{app.domain}
 				td #{app.standardPort}
 				td #{app.state}
+				td
+					- if (app.id != AppHouse.appID)
+						button(onclick='location.href=\'/app/#{app.id}/restart\';') Restart
+
+						- if (app.state == 'running')
+							button(onclick='location.href=\'/app/#{app.id}/stop\';') Stop
+						- else
+							button(onclick='location.href=\'/app/#{app.id}/start\';') Start
