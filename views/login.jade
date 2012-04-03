@@ -1,0 +1,20 @@
+div(class='box') #{title}
+
+form(action='/login_verify', method='POST')
+	div(class='login_box', style='position: relative;')
+		h1 Login
+
+		- if (err == 1)
+			div(class='login_warning')
+				div Failed to login!
+				div Please check your username and password!
+		
+		div(class='inputline')
+			div Username:
+			input(name='username', type='text')
+
+		div(class='inputline')
+			div Passowrd:
+			input(name='password', type='password')
+		div(style='position: absolute; right: 0px;')
+			button Login
