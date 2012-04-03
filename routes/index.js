@@ -1,11 +1,16 @@
 var AppHouse = require('AppHouse');
 
 exports.index = function(req, res) {
-	res.render('index', { title: 'AppHouse Manager' })
+	res.redirect('/login');
 };
 
 exports.login = function(req, res) {
 	res.render('login', { title: 'AppHouse Manager', err: req.query.err })
+};
+
+exports.logout = function(req, res) {
+	delete req.session;
+	res.redirect('/');
 };
 
 exports.login_verify = function(req, res) {

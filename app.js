@@ -44,6 +44,7 @@ function auth(req, res, next) {
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
+app.get('/logout', routes.logout);
 app.post('/login_verify', routes.login_verify);
 app.get('/applist', auth, routes.applist);
 app.get('/app/:id/:action', auth, routes.app);
