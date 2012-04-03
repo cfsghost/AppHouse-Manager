@@ -50,4 +50,4 @@ app.get('/applist', auth, routes.applist);
 app.get('/app/:id/:action', auth, routes.app);
 
 app.listen(80);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+console.log("AppHouse-Manager listening on port %d in %s mode", app.address().port, app.settings.env);
