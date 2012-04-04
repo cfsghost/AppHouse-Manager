@@ -4,7 +4,7 @@ var parseCookie = require('connect').utils.parseCookie;
 
 exports.createServer = function(app) {
 	/* Create a Socket.IO instance, to establish WebSocket Service */
-	var socket = io.listen(app);
+	var socket = io.listen(app, { log: false });
 
 	socket.set('authorization', function (data, accept) {
 		if (data.headers.cookie) {

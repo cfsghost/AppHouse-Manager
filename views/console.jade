@@ -10,15 +10,18 @@ script
 	});
 
 	socket.on('console', function(data) {
-		$('#console').append(data).animate({ scrollTop: $('#console').attr('scrollHeight') }, 'slow');
+		$('#console').append(data);
+		$('#console_container').animate({ scrollTop: $('#console_container')[0].scrollHeight }, 600);
 	});
 
-	socket.emit('console', appID);
+	$(function() {
+		socket.emit('console', appID);
+	})
 
 div(class='control_panel')
 	div(class='label') #{title} #{app.appID}
 	div(class='toolbar')
 		div(class='button', onclick='location.href=\'/logout\';') Logout
 
-div(class='console')
+div#console_container(class='console')
 	pre#console(class='output')
