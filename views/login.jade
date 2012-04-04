@@ -3,7 +3,7 @@ div(class='control_panel')
 
 form(action='/login_verify', method='POST')
 	div(class='login_box', style='position: relative;')
-		h1 Login
+		h1(class='login_title') Login
 
 		- if (err == 1)
 			div(class='login_warning')
@@ -17,5 +17,6 @@ form(action='/login_verify', method='POST')
 		div(class='inputline')
 			label(for='password') Passowrd:
 			input(name='password', type='password')
-		div(style='position: absolute; right: 0px;')
+
+		div(style='text-align: right;')
 			button Login
