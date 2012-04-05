@@ -110,6 +110,11 @@ pre {
 	padding: 10px;
 }
 
+.control_panel .label .title {
+	color: #bbaa55;
+	font-weight: bold;
+}
+
 .control_panel .toolbar {
 	position: absolute;
 	top: 0px;
@@ -180,6 +185,8 @@ pre {
 	overflow-y: auto;
 }
 .console .output {
-	color: #f0f0f0;
+	padding: 5px;
+	font-size: 9pt;
+	color: #eeeeee;
 	text-shadow: none;
 }

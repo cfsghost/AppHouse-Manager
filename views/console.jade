@@ -19,7 +19,8 @@ script
 	})
 
 div(class='control_panel')
-	div(class='label') #{title} #{app.appID}
+	div(class='label')
+		span(class='title') #{title} #{app.appID}
 	div(class='toolbar')
 		div(class='button', onclick='location.href=\'/logout\';') Logout
 
