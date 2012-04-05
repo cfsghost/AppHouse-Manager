@@ -145,6 +145,7 @@ pre {
 }
 
 .datalist .column_title {
+	font-size: 80%;
 	border-top: 1px solid #555555;
 	border-bottom: 1px solid #ffffff;
 	text-shadow: 0px 1px 0px #aaaaaa;

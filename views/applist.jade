@@ -11,6 +11,7 @@ div(class='content')
 			td ID
 			td Application Name
 			td Domain
+			td Instances
 			td Port
 			td State
 			td
@@ -21,6 +22,7 @@ div(class='content')
 				td #{app.id}
 				td #{app.appName}
 				td #{app.domain}
+				td(style='text-align: center;') #{app.instances}
 				td #{app.standardPort}
 
 				- if (app.state == 'running')
