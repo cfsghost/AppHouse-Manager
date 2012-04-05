@@ -1,6 +1,6 @@
 AppHouse Manager
 ---
-Management of AppHouse, to manage applications on hosting platform
+Management of [AppHouse](http://github.com/cfsghost/AppHouse/), to manage applications on hosting platform
 
 Installation
 -
