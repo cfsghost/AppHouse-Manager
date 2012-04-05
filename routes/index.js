@@ -1,4 +1,5 @@
 var AppHouse = require('AppHouse');
+var config = require('config');
 
 exports.index = function(req, res) {
 	res.redirect('/login');
@@ -14,13 +15,16 @@ exports.logout = function(req, res) {
 };
 
 exports.login_verify = function(req, res) {
-	if (req.body.username == 'admin' && req.body.password == 'admin') {
-		req.session = {
-			login: true,
-			username: req.body.username
-		};
-		res.redirect('/applist');
-		return;
+	for (var index in config.accounts) {
+		var account = config.accounts[index];
+		if (req.body.username == account.username && req.body.password == account.password) {
+			req.session = {
+				login: true,
+				username: req.body.username
+			};
+			res.redirect('/applist');
+			return;
+		}
 	}
 
 	res.redirect('/login?err=1');
