@@ -24,6 +24,12 @@ AppHouse-Manager is running as an application on AppHouse hosting platform, it m
             - 'AppHouse-Manager'
 
 3. Restart AppHouse to apply config
+4. You can use browser to login now. (Default account: admin/admin)
+
+
+How to Manage Accounts:
+-
+Manage accounts of AppHouse-Manager with modifying `<AppHouse-Manager>/config/default.yaml`. it can be set couple of account.
 
 License
 -
