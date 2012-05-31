@@ -1,5 +1,5 @@
 {
-	"name": "application-name",
+	"name": "Apphouse-Manager",
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
@@ -8,6 +8,7 @@
 		"express": "2.5.8",
 		"jade": ">= 0.0.1",
 		"cookie-sessions": ">= 0.0.2",
-		"socket.io": "0.9.4"
+		"socket.io": "0.9.4",
+		"yaml": ">= 0.2.3"
 	}
 }
